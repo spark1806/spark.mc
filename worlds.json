@@ -1,0 +1,57 @@
+[
+    {
+        "name": "SK1",
+        "description": "Первый сезон",
+        "start": "16.07.2023",
+        "end": "05.10.2023",
+        "note": "⚠️ Верхний мир утерян",
+        "special_note": "🔮 Доступны только Ад и Энд",
+        "file": "https://drive.google.com/drive/folders/12xn8TN_dm2rzTGDq1yYl9djNfjwH-7ka?usp=drive_link",
+        "nether_file": "https://drive.google.com/drive/folders/1Jkd1GIUov5w6Z1ohC8akbbO04ylYErG6?usp=drive_link",
+        "end_file": "https://drive.google.com/drive/folders/1fMZlzXBVhnSWMIznfl4FzI40qQ1J1cMk?usp=drive_link"
+    },
+    {
+        "name": "SK2",
+        "description": "Второй сезон",
+        "start": "10.01.2024",
+        "end": "08.05.2024",
+        "note": "⚠️ Мир повреждён, сейв недоступен",
+        "special_note": "",
+        "file": "https://drive.google.com/file/d/19Yl3FOwHyL_eW5RU-8LooJDoAG6tIP2E/view?usp=drive_link",
+        "nether_file": "",
+        "end_file": ""
+    },
+    {
+        "name": "SK3 Experience",
+        "description": "Третий сезон",
+        "start": "30.12.2024",
+        "end": "17.03.2025",
+        "note": "",
+        "special_note": "",
+        "file": "https://drive.google.com/file/d/19_4i9q1f-tuaYPFOhtSGdSMa__mxfc3G/view?usp=drive_link",
+        "nether_file": "",
+        "end_file": ""
+    },
+    {
+        "name": "SK3 Reload",
+        "description": "Перезагрузка",
+        "start": "24.05.2025",
+        "end": "17.01.2026",
+        "note": "",
+        "special_note": "",
+        "file": "https://drive.google.com/file/d/1WiRNiKqui5V2DxiaqOA-xgoQoBTEeMr4/view?usp=drive_link",
+        "nether_file": "",
+        "end_file": ""
+    },
+    {
+        "name": "SK3 Future",
+        "description": "Новый сезон",
+        "start": "21.01.2026",
+        "end": "Идёт в данный момент",
+        "note": "🟢 Идёт сейчас",
+        "special_note": "",
+        "file": "https://drive.google.com/file/d/1WiRNiKqui5V2DxiaqOA-xgoQoBTEeMr4/view?usp=drive_link",
+        "nether_file": "",
+        "end_file": ""
+    }
+]

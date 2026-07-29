@@ -1,0 +1,481 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #0a0a0a;
+    color: #fff;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* ===== РОЗОВЫЕ ВСПЫШКИ ===== */
+.flash {
+    position: fixed;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 0, 102, 0.25), transparent 70%);
+    pointer-events: none;
+    animation: flashAnim 5s ease-in-out infinite;
+    z-index: 0;
+}
+
+.flash:nth-child(1) {
+    width: 500px;
+    height: 500px;
+    top: -150px;
+    left: -150px;
+    animation-delay: 0s;
+}
+
+.flash:nth-child(2) {
+    width: 400px;
+    height: 400px;
+    bottom: -80px;
+    right: -80px;
+    animation-delay: 1.8s;
+    background: radial-gradient(circle, rgba(255, 51, 170, 0.2), transparent 70%);
+}
+
+.flash:nth-child(3) {
+    width: 350px;
+    height: 350px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation-delay: 3.5s;
+    background: radial-gradient(circle, rgba(255, 0, 102, 0.15), transparent 70%);
+}
+
+.flash:nth-child(4) {
+    width: 300px;
+    height: 300px;
+    top: 15%;
+    right: 5%;
+    animation-delay: 1s;
+    background: radial-gradient(circle, rgba(255, 51, 170, 0.15), transparent 70%);
+}
+
+.flash:nth-child(5) {
+    width: 250px;
+    height: 250px;
+    bottom: 25%;
+    left: 3%;
+    animation-delay: 2.5s;
+    background: radial-gradient(circle, rgba(255, 0, 102, 0.12), transparent 70%);
+}
+
+@keyframes flashAnim {
+    0%, 100% {
+        opacity: 0.2;
+        transform: scale(1);
+    }
+    25% {
+        opacity: 0.7;
+        transform: scale(1.4);
+    }
+    50% {
+        opacity: 0.3;
+        transform: scale(0.8);
+    }
+    75% {
+        opacity: 0.8;
+        transform: scale(1.5);
+    }
+}
+
+/* ===== ГЛАВНЫЙ ЭКРАН ===== */
+.hero {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh;
+    text-align: center;
+    padding: 2rem;
+    background: transparent;
+}
+
+.logo {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 5rem;
+    background: linear-gradient(135deg, #ff0066, #ff33aa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 80px rgba(255, 0, 102, 0.4);
+    letter-spacing: 8px;
+    margin-bottom: 1rem;
+    animation: logoPulse 3s ease-in-out infinite;
+}
+
+@keyframes logoPulse {
+    0%, 100% {
+        text-shadow: 0 0 80px rgba(255, 0, 102, 0.4);
+    }
+    50% {
+        text-shadow: 0 0 120px rgba(255, 0, 102, 0.8), 0 0 200px rgba(255, 0, 102, 0.3);
+    }
+}
+
+.subtitle {
+    font-size: 1.4rem;
+    color: #aaaaaa;
+    margin-bottom: 2.5rem;
+    letter-spacing: 2px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 1rem 3rem;
+    background: transparent;
+    color: #ff0066;
+    border: 2px solid #ff0066;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 30px rgba(255, 0, 102, 0.15);
+    position: relative;
+    z-index: 1;
+}
+
+.btn:hover {
+    background: #ff0066;
+    color: #fff;
+    box-shadow: 0 0 60px rgba(255, 0, 102, 0.5);
+    transform: scale(1.05);
+}
+
+/* ===== СЕЗОНЫ ===== */
+#seasons {
+    position: relative;
+    z-index: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 2rem 5rem;
+}
+
+#seasons h2 {
+    font-size: 2.8rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: #fff;
+    letter-spacing: 4px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+/* ===== КАРТОЧКА ===== */
+.card {
+    background: rgba(17, 17, 17, 0.85);
+    backdrop-filter: blur(10px);
+    border-radius: 24px;
+    padding: 2rem 1.8rem;
+    border: 2px solid #1a1a1a;
+    transition: all 0.4s ease;
+    box-shadow: 0 8px 0 #0a0a0a;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.card:hover {
+    border-color: #ff0066;
+    box-shadow: 0 0 40px rgba(255, 0, 102, 0.25), 0 0 80px rgba(255, 0, 102, 0.1), 0 8px 0 #0a0a0a;
+    transform: translateY(-6px);
+    background: rgba(20, 20, 20, 0.9);
+}
+
+.card h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #ff3399;
+    margin-bottom: 0.3rem;
+    transition: color 0.3s ease;
+}
+
+.card:hover h3 {
+    color: #ff66bb;
+    text-shadow: 0 0 30px rgba(255, 0, 102, 0.3);
+}
+
+.card .description {
+    color: #aaaaaa;
+    font-size: 1rem;
+    margin-bottom: 0.3rem;
+}
+
+/* ===== ПРИМЕЧАНИЯ ===== */
+.card .note {
+    font-size: 0.9rem;
+    background: rgba(255, 136, 68, 0.1);
+    border: 1px solid rgba(255, 136, 68, 0.2);
+    padding: 0.3rem 0.8rem;
+    border-radius: 8px;
+    display: inline-block;
+    margin-bottom: 0.6rem;
+    color: #ff8844;
+}
+
+.card .note.current {
+    color: #00ff88;
+    background: rgba(0, 255, 136, 0.1);
+    border: 1px solid rgba(0, 255, 136, 0.3);
+    animation: blinkGreen 2s ease-in-out infinite;
+}
+
+.card .note.broken {
+    color: #ff8844;
+    background: rgba(255, 136, 68, 0.1);
+    border: 1px solid rgba(255, 136, 68, 0.2);
+}
+
+@keyframes blinkGreen {
+    0%, 100% {
+        opacity: 1;
+        box-shadow: 0 0 20px rgba(0, 255, 136, 0.1);
+    }
+    50% {
+        opacity: 0.6;
+        box-shadow: 0 0 40px rgba(0, 255, 136, 0.3);
+    }
+}
+
+/* ===== СПЕЦИАЛЬНАЯ ПОМЕТКА ===== */
+.card .special-note {
+    color: #aa88ff;
+    font-size: 0.9rem;
+    background: rgba(170, 136, 255, 0.1);
+    border: 1px solid rgba(170, 136, 255, 0.2);
+    padding: 0.3rem 0.8rem;
+    border-radius: 8px;
+    display: inline-block;
+    margin-bottom: 0.6rem;
+}
+
+/* ===== ДАТЫ ===== */
+.dates {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    margin-bottom: 1.2rem;
+    font-size: 0.9rem;
+    color: #888888;
+    width: 100%;
+}
+
+.dates span {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+/* ===== КНОПКА СКАЧИВАНИЯ ===== */
+.download-btn {
+    display: inline-block;
+    padding: 0.6rem 1.8rem;
+    background: #ff0066;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 25px rgba(255, 0, 102, 0.2);
+    align-self: flex-start;
+}
+
+.download-btn:hover {
+    background: #ff33aa;
+    box-shadow: 0 0 50px rgba(255, 0, 102, 0.4);
+    transform: scale(1.05);
+}
+
+/* ===== ГРУППА КНОПОК (для SK1) ===== */
+.button-group {
+    display: flex;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+    margin-top: 0.3rem;
+    width: 100%;
+}
+
+.button-group .download-btn {
+    flex: 1;
+    min-width: 120px;
+    text-align: center;
+    align-self: center;
+}
+
+.button-group .nether-btn {
+    background: #ff4400;
+    box-shadow: 0 0 25px rgba(255, 68, 0, 0.3);
+}
+
+.button-group .nether-btn:hover {
+    background: #ff6622;
+    box-shadow: 0 0 50px rgba(255, 68, 0, 0.5);
+}
+
+.button-group .end-btn {
+    background: #8844ff;
+    box-shadow: 0 0 25px rgba(136, 68, 255, 0.3);
+}
+
+.button-group .end-btn:hover {
+    background: #aa66ff;
+    box-shadow: 0 0 50px rgba(136, 68, 255, 0.5);
+}
+
+/* ===== НЕТ КНОПКИ ===== */
+.no-download {
+    color: #666666;
+    font-size: 0.85rem;
+    font-style: italic;
+    margin-top: 0.3rem;
+    padding: 0.3rem 0;
+}
+
+/* ===== ТЕКУЩИЙ СЕЗОН ===== */
+.card.current-season {
+    border-color: #ff0066;
+    background: rgba(255, 0, 102, 0.06);
+    animation: pulseBorder 3s ease-in-out infinite;
+}
+
+@keyframes pulseBorder {
+    0%, 100% {
+        border-color: #ff0066;
+        box-shadow: 0 0 30px rgba(255, 0, 102, 0.1);
+    }
+    50% {
+        border-color: #ff33aa;
+        box-shadow: 0 0 60px rgba(255, 0, 102, 0.25), 0 0 100px rgba(255, 0, 102, 0.08);
+    }
+}
+
+/* ===== ПОВРЕЖДЁННЫЙ СЕЗОН ===== */
+.card.broken-season {
+    border-color: #884422;
+    background: rgba(136, 68, 34, 0.05);
+}
+
+.card.broken-season:hover {
+    border-color: #ff8844;
+    box-shadow: 0 0 30px rgba(136, 68, 34, 0.15);
+}
+
+/* ===== ФУТЕР ===== */
+.footer {
+    position: relative;
+    z-index: 1;
+    background: #0a0a0a;
+    border-top: 1px solid #1a1a1a;
+    padding: 3rem 2rem;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+}
+
+.footer-section h3 {
+    font-size: 1.2rem;
+    color: #ff3399;
+    margin-bottom: 0.8rem;
+    font-weight: 700;
+}
+
+.footer-section p {
+    color: #888888;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0.3rem 0;
+}
+
+.footer-section .footer-note {
+    font-size: 0.8rem;
+    color: #555555;
+    font-style: italic;
+    margin-top: 0.3rem;
+}
+
+.footer-link {
+    display: inline-block;
+    color: #ff0066;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+.footer-link:hover {
+    color: #ff66bb;
+    text-shadow: 0 0 20px rgba(255, 0, 102, 0.2);
+}
+
+/* ===== АДАПТАЦИЯ ПОД ТЕЛЕФОН ===== */
+@media (max-width: 600px) {
+    .logo {
+        font-size: 3rem;
+        letter-spacing: 4px;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+    }
+
+    #seasons h2 {
+        font-size: 2rem;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        padding: 1.5rem;
+    }
+
+    .btn {
+        padding: 0.8rem 2rem;
+        font-size: 1rem;
+    }
+
+    .download-btn {
+        padding: 0.5rem 1.4rem;
+        font-size: 0.8rem;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .flash {
+        display: none;
+    }
+
+    .button-group {
+        flex-direction: column;
+        gap: 0.6rem;
+    }
+
+    .button-group .download-btn {
+        min-width: unset;
+        width: 100%;
+    }
+}
