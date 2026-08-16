@@ -16,7 +16,8 @@ fetch('worlds.json')
             card.className = 'card';
             
             const isCurrent = season.note && season.note.includes('Идёт сейчас');
-            const isBroken = season.note && season.note.includes('повреждён');
+            // Теперь isBroken срабатывает ТОЛЬКО если есть точная фраза "сейв недоступен"
+            const isBroken = season.note && season.note.includes('сейв недоступен');
             const hasSpecialNote = season.special_note && season.special_note.trim() !== '';
             const hasTwoButtons = season.nether_file && season.end_file && 
                                   season.nether_file.trim() !== '' && 
