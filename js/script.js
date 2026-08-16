@@ -44,7 +44,6 @@ fetch('worlds.json')
             } else if (isBroken) {
                 buttonHtml = `<p class="no-download">🔧 Сейв недоступен</p>`;
             } else if (hasTwoButtons) {
-                // ДВЕ КНОПКИ ДЛЯ SK1
                 buttonHtml = `
                     <div class="button-group">
                         <a href="${season.nether_file}" target="_blank" class="download-btn nether-btn">🔥 Скачать Ад</a>
