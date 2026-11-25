@@ -33,18 +33,7 @@
         "end_file": ""
     },
     {
-        "name": "SK3 Reload",
-        "description": "Перезагрузка",
-        "start": "24.05.2025",
-        "end": "17.01.2026",
-        "note": "",
-        "special_note": "",
-        "file": "https://drive.google.com/file/d/1WiRNiKqui5V2DxiaqOA-xgoQoBTEeMr4/view?usp=drive_link",
-        "nether_file": "",
-        "end_file": ""
-    },
-    {
-        "name": "SK3 Future",
+        "name": "SK3 Try",
         "description": "Новый сезон",
         "start": "21.01.2026",
         "end": "01.11.2026",
@@ -54,4 +43,4 @@
         "nether_file": "",
         "end_file": ""
     }
-]
+ 
