@@ -45,10 +45,12 @@ fetch('worlds.json')
             } else if (isBroken) {
                 buttonHtml = `<p class="no-download">🔧 Сейв недоступен</p>`;
             } else if (hasTwoButtons) {
+                // Здесь добавлена третья кнопка для основного мира, если ссылка на него есть
                 buttonHtml = `
                     <div class="button-group">
                         <a href="${season.nether_file}" target="_blank" class="download-btn nether-btn">🔥 Скачать Ад</a>
                         <a href="${season.end_file}" target="_blank" class="download-btn end-btn">🌌 Скачать Энд</a>
+                        ${season.file && season.file.trim() !== '' ? `<a href="${season.file}" target="_blank" class="download-btn">📥 Скачать мир</a>` : ''}
                     </div>
                 `;
             } else {
